@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sc.htpController">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true">
+         <image>
+            <Image url="@game-background.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="page1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#282828" height="400.0" layoutX="120.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+            <Label layoutX="128.0" layoutY="270.0" text="Objective" textFill="#c7bf2b" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="290.0" lineSpacing="0.5" prefHeight="113.0" prefWidth="384.0" text="1. Win by either getting 5 (or more) stones in a row, either horizontally, vertically, or diagonally, with no empty points between them&#10;OR  &#10;2. Win by capturing 5 (or more) pairs of your opponent's stones" textFill="#c7bf2b" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="125.0" prefHeight="123.0" prefWidth="384.0" text="The first player (chosen by chance) begins the game with the first stone played on the center point. Thereafter players take turns playing their stones, one at a time, on any empty intersection.&#10;&#10;The stones are played on the intersections of the lines (including the edge of the board), rather than in the squares. A move is completed when the stone is released." textFill="#c7bf2b" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="128.0" layoutY="105.0" text="Game Play" textFill="#c7bf2b" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="page2" prefHeight="480.0" prefWidth="640.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#282828" height="400.0" layoutX="120.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+            <Label layoutX="128.0" layoutY="105.0" text="Captures" textFill="#c7bf2b" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="125.0" prefHeight="123.0" prefWidth="384.0" text="Whenever your opponent has two stones (and only two), which are adjacent, those stones are vulnerable to capture. The pair can be captured by bracketing its two ends with your own stones.&#10;&#10;Captures can be made along diagonal as well as horizontal and vertical lines. All four stones involved must be consecutive and in a straight line." textFill="#c7bf2b" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="128.0" layoutY="288.0" prefHeight="54.0" prefWidth="384.0" text="A stone may legally be played onto any empty intersection, even if that point has been previously occupied, and even if it forms a pair between two enemy stones." textFill="#c7bf2b" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="128.0" layoutY="268.0" text="Moving Into a Captured Position" textFill="#c7bf2b" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="480.0" prefWidth="640.0">
+         <children>
+            <Text fill="#009900" fontSmoothingType="LCD" layoutX="221.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How To Play" underline="true">
+               <font>
+                  <Font name="Bauhaus 93" size="36.0" />
+               </font>
+            </Text>
+            <Polygon fx:id="leftPage" fill="DODGERBLUE" layoutX="301.0" layoutY="413.0" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" onMousePressed="#turnLeftPage" points="-50.0, 40.0, 50.0, 40.0, 0.0, -60.0" rotate="-90.0" scaleX="0.25" scaleY="0.25" scaleZ="0.25" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Polygon fx:id="rightPage" fill="DODGERBLUE" layoutX="340.0" layoutY="413.0" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" onMousePressed="#turnRightPage" points="-50.0, 40.0, 50.0, 40.0, 0.0, -60.0" rotate="90.0" scaleX="0.25" scaleY="0.25" scaleZ="0.25" stroke="BLACK" strokeType="INSIDE" />
+            <SVGPath fx:id="exitX" content="M 289.357 170.649 H 299.534 V 191.002 H 319.888 V 201.179 H 299.534 V 221.533 H 289.357 V 201.179 H 269.004 V 191.002 H 289.357 Z" fill="#940000" layoutX="200.0" layoutY="-132.0" onMouseClicked="#back" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" onMousePressed="#back" rotate="45.0" scaleX="0.75" scaleY="0.75" scaleZ="0.75" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sc.gameController">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true">
+         <image>
+            <Image url="@game-background.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar stylesheets="@caspian.css" StackPane.alignment="TOP_LEFT">
+         <menus>
+            <Menu mnemonicParsing="false" text="Game">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#play" text="New Game" />
+                  <MenuItem mnemonicParsing="false" onAction="#home" text="Main Menu" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#htp" text="How To Play" />
+                  <MenuItem mnemonicParsing="false" text="About" visible="false" />
+               </items>
+            </Menu>
+         </menus>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </MenuBar>
+      <Pane maxHeight="456.0" maxWidth="212.0" prefHeight="456.0" prefWidth="213.0" StackPane.alignment="BOTTOM_RIGHT">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#282828" height="455.0" stroke="BLACK" strokeType="INSIDE" width="214.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#737373" height="166.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="214.0" />
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="214.0" style="-fx-background-color: #d2d2d2; -fx-background-radius: 10; -fx-padding: 5;" text="Captures">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.38823530077934265" green="0.5607843399047852" blue="0.729411780834198" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+            <Circle layoutX="34.0" layoutY="75.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke: TRANSPARENT;" />
+            <Circle fill="WHITE" layoutX="34.0" layoutY="134.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke: TRANSPARENT;" />
+            <Label fx:id="blackCaptures" alignment="CENTER" layoutX="65.0" layoutY="56.0" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #d2d2d2; -fx-background-radius: 10; -fx-padding: 5;" text="0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.38823530077934265" green="0.5607843399047852" blue="0.729411780834198" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+            <Label fx:id="whiteCaptures" alignment="CENTER" layoutX="65.0" layoutY="115.0" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #d2d2d2; -fx-background-radius: 10; -fx-padding: 5;" text="0">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.38823530077934265" green="0.5607843399047852" blue="0.729411780834198" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+      <Pane maxHeight="456.0" maxWidth="424.0" StackPane.alignment="BOTTOM_LEFT">
+         <children>
+            <GridPane gridLinesVisible="true" layoutX="32" layoutY="48">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+               </rowConstraints>
+            </GridPane>
+            <Circle centerX="212.0" centerY="228.0" fill="TRANSPARENT" radius="5.0" stroke="BLACK" strokeType="INSIDE" visible="true" />
+            <Circle centerX="152.0" centerY="168.0" fill="TRANSPARENT" radius="5.0" stroke="BLACK" strokeType="INSIDE" visible="true" />
+            <Circle centerX="272.0" centerY="168.0" fill="TRANSPARENT" radius="5.0" stroke="BLACK" strokeType="INSIDE" visible="true" />
+            <Circle centerX="152.0" centerY="288.0" fill="TRANSPARENT" radius="5.0" stroke="BLACK" strokeType="INSIDE" visible="true" />
+            <Circle centerX="272.0" centerY="288.0" fill="TRANSPARENT" radius="5.0" stroke="BLACK" strokeType="INSIDE" visible="true" />
+            <GridPane fx:id="gameBoard" layoutX="22" layoutY="38" onMouseClicked="#gridClickHandler">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="20" minWidth="20.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="20" minHeight="20.0" vgrow="NEVER" />
+               </rowConstraints>
+            </GridPane>
+            <Label fx:id="winner" alignment="CENTER" layoutX="86.0" layoutY="2.0" prefHeight="43.0" prefWidth="262.0" style="-fx-background-color: #d2d2d2; -fx-background-radius: 10; -fx-padding: 5;" text="No Game Started">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.4740740656852722" blue="0.4740740656852722" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+
+   </children>
+</StackPane>

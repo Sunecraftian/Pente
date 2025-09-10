@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sc.mainController">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true">
+         <image>
+            <Image url="@game-background.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="185.0" layoutY="90.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #282828; -fx-text-fill: #aa0000; -fx-background-radius: 24; -fx-padding: 10;" text="Pente">
+         <font>
+            <Font name="Bauhaus 93" size="72.0" />
+         </font>
+         <effect>
+            <Lighting specularConstant="0.43" specularExponent="25.5">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="0.0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Button fx:id="startButton" layoutX="260.0" layoutY="276.0" mnemonicParsing="false" onAction="#start" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="58.0" prefWidth="121.0" style="-fx-text-fill: #009900; -fx-background-color: #383838;" text="Start">
+         <font>
+            <Font name="Bauhaus 93" size="34.0" />
+         </font>
+         <effect>
+            <Lighting specularExponent="21.5">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="0.0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button fx:id="htpButton" layoutX="236.0" layoutY="354.0" mnemonicParsing="false" onAction="#htp" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="64.0" prefWidth="168.0" style="-fx-text-fill: #009900; -fx-background-color: #383838;" text="How to Play">
+         <font>
+            <Font name="Bauhaus 93" size="25.0" />
+         </font>
+         <effect>
+            <Lighting specularExponent="21.5">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="0.0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+   </children>
+</Pane>
